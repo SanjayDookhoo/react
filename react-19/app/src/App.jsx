@@ -8,11 +8,13 @@ import ExampleUseLayoutEffect from './components/ExampleUseLayoutEffect'
 import PrevValuesWithUseEffect from './components/PrevValuesWithUseEffect'
 import ExampleUseId from './components/ExampleUseId'
 import ExampleUse from './components/Use-ErrorBoundary-Suspense/ExampleUse'
+import TodoApp from './components/TodoApp/TodoApp'
 
 function App() {
   return (
     <>
-      <ExampleUse />
+      <TodoApp />
+      {/* <ExampleUse /> */}
       {/* <ExampleUseId />
       <ExampleUseId /> */}
       {/* <StaleClosure /> */}
