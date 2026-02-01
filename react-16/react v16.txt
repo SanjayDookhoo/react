@@ -1,0 +1,115 @@
+this.state
+this.props
+arrow functions for events because if not used, the this would refer to the funciton context
+this.setState, enumerates over a passed in object, and updates all values in this.state that matches to the new value
+
+<-- example -->
+import React, {Component} from 'react';	
+class ComponentName extends Component {
+	state = {
+		test: 5
+	}
+	handleOnClick = (e) => {
+		console.log(e)
+		this.setState({
+			test: 6
+		})
+	}
+	render(){
+		<div>
+			<button onClick={handleOnClick}>{this.state.test} </button>
+		</div>
+	}
+}
+export default ComponentName
+
+<-- Class component that can be a functional component -->
+import React, { Component } from 'react';
+class Ninjas extends Component{
+	render(){
+		const { ninjas } = this.props;
+		const ninjaList = ninjas.map(ninja => {
+			return (
+				<div className="ninja" key={ninja.id}>
+					<div>Name: { ninja.name }</div>
+					<div>Age: { ninja.age }</div>
+					<div>Belt: { ninja.belt }</div>
+				</div>
+			)
+		})
+
+		return(
+			<div className="ninja-list">
+				{ ninjaList }
+			</div>
+		)
+	}
+}
+
+
+<!-- This is called a functional component (before hooks), where it does not have a state -->
+import React from 'react';
+const Ninjas = (props) => {
+	const { ninjas } = props;
+	const ninjaList = ninjas.map(ninja => {
+		return(
+			<div className="ninja" key={ninja.id}>
+				<div>Name: { ninja.name }</div>
+				<div>Age: { ninja.age }</div>
+				<div>Belt: { ninja.belt }</div>
+			</div>
+		)
+	})
+
+	return(
+		<div className="ninja-list">
+			{ ninjaList }
+		</div>
+	)
+}
+export default Ninjas
+
+lifecycle methods (probably can do arrow functions to access this.state, etc.)
+	componentDidMount(){
+		console.log('componentDidMount')
+	}
+	componentDidUpdate(prevProps,prevState){
+		console.log(prevProps, prevState)
+	}
+	componentWillUnmount(){
+		console.log('componentWillUnmount')
+	}
+	
+react-router (v4)
+	router params
+	
+		import { BrowserRouter as Router, Route } from 'react-router-dom';
+		function App() {
+		  return (
+			<Router>
+			  <div>
+				{/* The :id segment is a URL parameter */}
+				<Route path="/users/:id" component={UserProfile} />
+			  </div>
+			</Router>
+		  );
+		}
+		
+		import React from 'react';
+		function UserProfile(props) {
+		  // Access the 'id' parameter
+		  const userId = props.match.params.id;
+
+		  return (
+			<h1>Welcome User: {userId}</h1>
+		  );
+		}
+	
+	query params
+		componentDidMount() {
+			  const params = new URLSearchParams(this.props.location.search);
+			  const name = params.get('name');
+		}
+
+General knowledge note
+	import React from 'react' // this was done, even though it was not used in the code that was written, it was used by the React compiler for compiling JSX, something like React.createElement was used, so it was needed for that
