@@ -9,11 +9,13 @@ import PrevValuesWithUseEffect from './components/PrevValuesWithUseEffect'
 import ExampleUseId from './components/ExampleUseId'
 import ExampleUse from './components/Use-ErrorBoundary-Suspense/ExampleUse'
 import TodoApp from './components/TodoApp/TodoApp'
+import ActivityExample from './components/ActivityExample/ActivityExample'
 
 function App() {
   return (
     <>
-      <TodoApp />
+      <ActivityExample />
+      {/* <TodoApp /> */}
       {/* <ExampleUse /> */}
       {/* <ExampleUseId />
       <ExampleUseId /> */}
