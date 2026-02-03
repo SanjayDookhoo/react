@@ -17,11 +17,15 @@ type Comment = {
 };
 
 // ISR: revalidate at most once per minute
-export const revalidate = 60;
+// If this is left out, it will be cached forever
+// export const revalidate = 60;
 
 // Don't prebuild any params at build time;
 // pages will be generated on-demand as they are first requested.
+// also if this is excluded, this would be generated new everytime serverside, this is needed for ISG
 export async function generateStaticParams() {
+  // if for some reason there are known pages that will be accessed before hand, this will ensure that it is generated at build time, rather than when first attempted to be reached
+  // return [{ id: "1" }]
   return [];
 }
 
@@ -76,7 +80,7 @@ export default async function PostPage({ params }: { params: Promise<{ id: strin
         <span className="badge">ISR dynamic route + sub-requests</span>
         <h1 className="h1">{post.title}</h1>
         <p className="p">{post.body}</p>
-
+        {Math.random()} :Use this to check if the cache is working as expected
         <div style={{ marginTop: 12 }}>
           <Link href="/posts">← Back to posts</Link>
         </div>
