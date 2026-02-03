@@ -30,7 +30,6 @@ export default function Comments ({id} : {id : string}) {
     );
     if (!res.ok) throw new Error("Failed to fetch comments");
     const comments = (await res.json()) as Comment[];
-    console.log(comments)
 
     // randomly pick up to 5
     const randomComments = pickRandom(comments, Math.min(2, comments.length));
