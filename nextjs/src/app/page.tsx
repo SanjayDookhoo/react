@@ -1,7 +1,12 @@
+import Button from "@/components/Button"
+
 export default function HomePage() {
   return (
     <div className="stack">
       {Math.random()} :Use this to check if the cache is working as expected
+      <Button>
+        Click me
+      </Button>
       <div className="card">
         <span className="badge">SSG</span>
         <h1 className="h1">cool website</h1>
