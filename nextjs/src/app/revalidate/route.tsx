@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 
 // This uses revalidatePath, which invalidates the cache and the page regenerates on the next request.
 // because it is a get request, it cant have a JSON body, and because the path has '/' it is placed at the end as a query string
+// example: http://localhost:3000/revalidate?secret=<SECRET_TO_REPLACE>&path=/post/1
 
 export async function GET(req: Request) {
   const { searchParams } = new URL(req.url);
