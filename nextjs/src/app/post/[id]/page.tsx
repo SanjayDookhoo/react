@@ -54,6 +54,15 @@ async function getRandomCommentsForPost(id: string): Promise<Comment[]> {
   return pickRandom(comments, Math.min(5, comments.length));
 }
 
+/*
+  For the current version of nextjs, params is a promise, the previous version no longer works 
+
+  previous version:
+
+  export default async function PostPage({ params }: { params: { id: string }}) {
+  const { id } = params
+*/
+
 export default async function PostPage({ params }: { params: Promise<{ id: string }>}) {
   const { id } = await params
   const post = await getPost(id);
