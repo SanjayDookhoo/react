@@ -1,0 +1,137 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #0b0d12;
+  --card: #121626;
+  --text: #e7eaf3;
+  --muted: #a9b1c6;
+  --border: rgba(255, 255, 255, 0.08);
+  --link: #7aa2ff;
+  --linkHover: #9bb8ff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background: radial-gradient(1200px 600px at 20% 0%, #162044 0%, var(--bg) 55%);
+  color: var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica,
+    Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--linkHover);
+  text-decoration: underline;
+}
+
+.container {
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 18px;
+}
+
+.header {
+  border-bottom: 1px solid var(--border);
+  background: rgba(10, 12, 18, 0.55);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+}
+
+.headerInner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  font-weight: 800;
+  letter-spacing: 0.3px;
+}
+
+.nav {
+  display: flex;
+  gap: 14px;
+}
+
+.footer {
+  border-top: 1px solid var(--border);
+  margin-top: 28px;
+}
+
+.footerInner {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.card {
+  border: 1px solid var(--border);
+  background: rgba(18, 22, 38, 0.7);
+  border-radius: 14px;
+  padding: 16px;
+}
+
+.stack {
+  display: grid;
+  gap: 12px;
+}
+
+.h1 {
+  margin: 0 0 6px 0;
+  font-size: 34px;
+}
+
+.p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 12px;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 4px 10px;
+}
+
+.list {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+}
+
+.item {
+  list-style: none;
+  border: 1px solid var(--border);
+  background: rgba(18, 22, 38, 0.55);
+  border-radius: 14px;
+  padding: 14px;
+}
+
+.itemTitle {
+  margin: 0 0 6px 0;
+  font-size: 16px;
+}
+
+.itemMeta {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
