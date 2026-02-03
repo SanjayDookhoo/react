@@ -1,4 +1,4 @@
-import Comments from "@/components/post/Comments";
+import Comments from "@/app/post/[id]/Comments";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
