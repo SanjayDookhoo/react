@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from "react";
+import Comment from "./Comment";
 
 type Comment = {
   id: number;
@@ -53,9 +54,7 @@ export default function Comments ({id} : {id : string}) {
               <span>{c.email}</span>
               <span>Comment ID: {c.id}</span>
             </p>
-            <p className="p" style={{ color: "var(--text)" }}>
-              {c.body}
-            </p>
+            <Comment body={c.body} />
           </div>
         ))}
       </div>
