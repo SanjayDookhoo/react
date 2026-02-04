@@ -51,6 +51,9 @@ export default async function PostsPage() {
         <p className="p">
           This list is statically generated at build time from the JSONPlaceholder API.
         </p>
+        <a className="button" href="/post/new">
+          New post
+        </a>
       </div>
 
       <ul className="list">
