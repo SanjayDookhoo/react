@@ -10,7 +10,7 @@ export default function ClientComponentA() {
 
   return (
     <div>
-      B length {state.data.length}
+      A length {state.data.length}
     </div>
   );
 }
